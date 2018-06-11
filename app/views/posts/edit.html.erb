@@ -1,0 +1,47 @@
+<!-- Main -->
+  <div id="main">
+
+    <!--  Post -->
+      <section class="post">
+        <%= form_for @post, url: {action: "update"}, html: {class: "nifty_form"} do %>
+        <div class="field">
+          <label name="post[title]">Title</label>
+          <input type="text" name="post[title]" value="<%= @post.title %>">
+        </div>
+
+        <div class="field">
+          <label name="post[featured]">Featured</label>
+          <%= @post.featured %>
+          <select name="post[featured]">
+            <% if @post.featured %>
+            <option value="1" selected>Active</option>
+            <option value="0">Inactive</option>
+            <% else %>
+            <option value="1" >Active</option>
+            <option value="0" selected>Inactive</option>
+            <% end %>
+          </select>
+        </div>
+
+        <div class="field">
+          <label name="post[img_url]">Img Url</label>
+          <input type="text" name="post[img_url]" value="<%= @post.img_url  %>">
+        </div class="">
+
+        <div class="field">
+          <label name="post[slug]">Slug</label>
+          <input type="text" name="post[slug]" value="<%= @post.slug  %>">
+        </div>
+
+        <div class="field">
+          <label name="post[content]">Content</label>
+          <textarea type="text" name="post[content]" ><%= @post.content  %>"</textarea>
+        </div>
+
+        <div class="field">
+          <button type="submit">Save</button>
+        </div>
+
+        <% end %>
+      </section>
+  </div>

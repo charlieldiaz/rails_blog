@@ -1,0 +1,22 @@
+<!-- Main -->
+  <div id="main">
+
+    <!-- Featured Post -->
+      <article class="post featured">
+        <header class="major">
+          <span class="date"><%= @post.created_at.to_formatted_s(:long) %></span>
+          <h1><a href="#"><%= @post.title %></a></h1>
+        </header>
+        <div class="image main"><img src="<%= @post.img_url %>" alt="" /></div>
+        <p><%= @post.content %></p>
+
+        <a class="btn btn-sm" href="/posts/<%=@post.id%>" data-method="delete">
+          <i class="pg-trash"></i><span class="bold">Delete</span>
+        </a>
+
+      </section>
+
+    <!-- Footer -->
+
+
+  </div>
